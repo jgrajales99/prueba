@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="registro">
+    <div class="formulario">
+        <h1>Registro</h1>
+        <form id="registroForm" onsubmit="handleRegistro(event)">
+            <div class="tipo-documento">
+                
+                <select id="tipoDocumento" required>
+                    <option value="" disabled selected hidden>Tipo de documento</option>
+                    <option value="cedula">Cédula</option>
+                    <option value="tarjeta">Tarjeta de extranjería</option>
+                    <option value="identidad">Tarjeta de identidad</option>
+                </select>
+            </div>
+            <div class="numero-documento">
+                <input type="text" id="numeroDocumento" required placeholder="Número de documento">
+            </div>
+            <div class="numero-celular">
+                <input type="tel" id="numeroCelular" required placeholder="Número de celular">
+            </div>
+            <div class="correo">
+                <input type="email" id="correo" required placeholder="Correo electrónico">
+            </div>
+            <div class="informacion">
+                <textarea id="informacion" required placeholder="Información"></textarea>
+            </div>
+            <input type="submit" value="Registrarse">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+
+            // Obtener los valores de los campos del formulario
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const documento = document.getElementById('documento').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+
+            // Crear el objeto de datos en formato JSON
+            const data = {
+                nombre: nombre,
+                apellido: apellido,
+                documento: documento,
+                email: email,
+                telefono: telefono
+            };
+
+            // Enviar la solicitud POST al backend usando fetch
+            fetch('http://localhost:8080/api/registro', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data) // Convertir los datos a JSON
+            })
+            .then(response => response.json()) // Convertir la respuesta a JSON
+            .then(data => {
+                console.log('Usuario registrado:', data);
+                alert('Usuario registrado exitosamente');
+            })
+            .catch(error => {
+                console.error('Error al registrar el usuario:', error);
+                alert('Ocurrió un error al registrar el usuario');
+            });
+        });
+    </script>
+</body>
+</html>
+

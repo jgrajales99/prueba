@@ -1,0 +1,296 @@
+/* Estilos para el documento index.html */
+body#index, #lobby {
+    margin: 0;
+    padding: 0;
+    font-family: monserrat;
+    background: linear-gradient(150deg, #ff8000, #58D68D);
+    height: 100vh;
+}
+
+body#index, #lobby .formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+}
+
+body#index .formulario h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+body#index .formulario form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+body#index form .username {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+body#index .username input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+body#index .username label {
+    position: absolute;
+    top: 50%;
+    left: 5px; 
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+body#index, .username span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #6c3483;
+}
+
+body#index .username input:focus~label,
+body#index .username input:focus~label {
+    top: -5px;
+    color: #6c3483;
+}
+
+body#index .username input:focus~span::before,
+body#index .username input:focus~span::before {
+    width: 100%;
+}
+
+body#index .recordar {
+    margin: -5px 0 20px 5px;
+    color: blue;
+    cursor: pointer;
+}
+
+body#index .recordar:hover {
+    text-decoration: underline;
+}
+
+body#index input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #6c3483;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+body#index input[type="submit"]:hover {
+    border-color: #6c3483;
+    transition: 5s;
+}
+
+body#index .registrarse {
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+}
+
+body#index .registrarse a {
+    color: blue;
+    text-decoration: none;
+}
+
+body#index .registrarse a:hover {
+    text-decoration: underline;
+}
+
+
+/* Estilos para la página de registro */
+body#registro {
+    margin: 0;
+    padding: 0;
+    font-family: monserrat;
+    background: linear-gradient(150deg, #ff8000, #58D68D);
+    height: 100vh;
+}
+
+.formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.formulario h1 {
+    text-align: center;
+    border-bottom: 1px solid silver;
+    padding-bottom: 10px;
+}
+
+.formulario form {
+    margin-top: 20px;
+}
+
+/* Estilos para los campos del formulario */
+.formulario input[type="text"],
+.formulario input[type="tel"],
+.formulario input[type="email"],
+.formulario textarea,
+.formulario select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de enviar */
+.formulario input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #6c3483;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #5b2c6f;
+}
+
+/* Estilos para el selector de tipo de documento */
+.formulario select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("arrow.png") no-repeat right;
+    background-size: 20px;
+}
+
+/* Estilos para los placeholders */
+.formulario input[type="text"]::placeholder,
+.formulario input[type="tel"]::placeholder,
+.formulario input[type="email"]::placeholder,
+.formulario textarea::placeholder {
+    color: #999;
+}
+
+/* Estilos para la página de actualización de datos */
+body#actualizacion {
+    margin: 0;
+    padding: 0;
+    font-family: monserrat;
+    background: linear-gradient(150deg, #ff8000, #58D68D);
+    height: 100vh;
+}
+
+.formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.formulario h1 {
+    text-align: center;
+    border-bottom: 1px solid silver;
+    padding-bottom: 10px;
+}
+
+.formulario form {
+    margin-top: 20px;
+}
+
+/* Estilos para los campos del formulario */
+.formulario input[type="text"],
+.formulario input[type="tel"],
+.formulario input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de enviar */
+.formulario input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #6c3483;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #5b2c6f;
+}
+
+/* Estilos para los placeholders */
+.formulario input[type="text"]::placeholder,
+.formulario input[type="tel"]::placeholder,
+.formulario input[type="email"]::placeholder {
+    color: #999;
+}
+
+/* Estilos para el aside */
+aside {
+    width: 200px;
+    background: #333;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside ul li {
+    padding: 10px 20px;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+aside ul li a:hover {
+    background: #555;
+}
+
+
+
+

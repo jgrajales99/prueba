@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="registro">
+    <div class="formulario">
+        <h1>Registro de Usuario</h1>
+        <form id="registroForm" onsubmit="handleRegistro(event)">
+            
+            <div>
+                <label for="nombres">Nombres:</label>
+                <input type="text" id="nombres" required placeholder="Nombres">
+            </div>
+
+            <div>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" required placeholder="Apellidos">
+            </div>
+
+            <div>
+                <label for="sexo">Sexo:</label>
+                <select id="sexo" required>
+                    <option value="" disabled selected hidden>Seleccione su sexo</option>
+                    <option value="masculina">Masculina</option>
+                    <option value="femenina">Femenina</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="documento">Número de documento:</label>
+                <input type="text" id="documento" required placeholder="Número de documento">
+            </div>
+
+            <div>
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" required>
+            </div>
+
+            <div>
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" required placeholder="Correo electrónico">
+            </div>
+
+            <div>
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" required placeholder="Dirección">
+            </div>
+
+            <div>
+                <label for="celular">Celular:</label>
+                <input type="text" id="celular" required placeholder="Número de celular">
+            </div>
+
+            <div>
+                <label for="celularAlternativo">Celular Alternativo:</label>
+                <input type="text" id="celularAlternativo" placeholder="Número de celular alternativo">
+            </div>
+
+            <input type="submit" value="Registrarse">
+        </form>
+    </div>
+
+    <script>
+        function handleRegistro(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+
+            // Obtener los valores de los campos del formulario
+            const nombres = document.getElementById('nombres').value;
+            const apellidos = document.getElementById('apellidos').value;
+            const sexo = document.getElementById('sexo').value;
+            const documento = document.getElementById('documento').value;
+            const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+            const email = document.getElementById('email').value;
+            const direccion = document.getElementById('direccion').value;
+            const celular = document.getElementById('celular').value;
+            const celularAlternativo = document.getElementById('celularAlternativo').value;
+
+            // Crear el objeto de datos en formato JSON
+            const data = {
+                nombres: nombres,
+                apellidos: apellidos,
+                sexo: sexo,
+                documento: documento,
+                fechaNacimiento: fechaNacimiento,
+                email: email,
+                direccion: direccion,
+                celular: celular,
+                celularAlternativo: celularAlternativo
+            };
+
+            // Enviar la solicitud POST al backend usando fetch
+            fetch('http://localhost:8080/api/registro', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data) // Convertir los datos a JSON
+            })
+            .then(response => response.json()) // Convertir la respuesta a JSON
+            .then(data => {
+                console.log('Usuario registrado:', data);
+                alert('Usuario registrado exitosamente');
+            })
+            .catch(error => {
+                console.error('Error al registrar el usuario:', error);
+                alert('Ocurrió un error al registrar el usuario');
+            });
+        }
+    </script>
+</body>
+</html>
+
+

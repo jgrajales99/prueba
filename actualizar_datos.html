@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualización de Datos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="actualizacion">
+    <div class="formulario">
+        <h1>Actualización de Datos</h1>
+        <form id="updateForm">
+            <div class="username">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" id="username" name="username" required>
+                <span></span>
+            </div>
+
+            <div class="email">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <span></span>
+            </div>
+
+            <div class="cel">
+                <label for="cel">Teléfono:</label>
+                <input type="tel" id="cel" name="cel">
+                <span></span>
+            </div>
+
+            <div class="edad">
+                <label for="birthdate">Fecha de nacimiento:</label>
+                <input type="date" id="edad" name="edad">
+                <span></span>
+            </div>
+
+            <div class="dire">
+                <label for="address">Dirección:</label>
+                <input type="text" id="dire" name="dire">
+                <span></span>
+            </div>
+
+            <div class="actualizar-button">
+                <button type="submit">Actualizar</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="message"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
